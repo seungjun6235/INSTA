@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'posts',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,5 @@ MEDIA_ROOT = BASE_DIR/'media'
 
 # media 경로 처리(주소창)
 MEDIA_URL = '/media/'
+
+AUTH_USER_MODEL ='accounts.user'
