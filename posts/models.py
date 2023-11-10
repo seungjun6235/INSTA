@@ -17,3 +17,5 @@ class Post(models.Model):
     )
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
+    # user_id =
+    like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_posts')

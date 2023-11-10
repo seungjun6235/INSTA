@@ -10,3 +10,7 @@ class User(AbstractUser):
         crop=['middle','center'],
         upload_to='profile'
     )
+
+    #user의 post_set 
+    #like_user의 post_set = reverse accessor 이름 중복 
+    #            => like_posts로 바꿈
