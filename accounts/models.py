@@ -14,3 +14,6 @@ class User(AbstractUser):
     #user의 post_set 
     #like_user의 post_set = reverse accessor 이름 중복 
     #            => like_posts로 바꿈
+
+    followings = models.ManyToManyField('self',related_name='followers', symmetrical=False)
+    # user_set 자동생성
