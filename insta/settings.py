@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'posts',
     'bootstrap5',
+    'import_export',
 ]
 
 MIDDLEWARE = [

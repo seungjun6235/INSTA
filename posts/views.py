@@ -46,3 +46,22 @@ def likes(request, id):
         # user.like_posts.add(post) 위와 같은코드
 
     return redirect('posts:index')
+
+from django.http import JsonResponse # 장고를 JS에 쓰게 만들기
+def likes_async(request,id):
+    user = request.user
+    post = Post.objects.get(id=id)
+
+    if user in post.like_users.all():
+        post.like_users.remove(user)
+        status = False
+    else:
+        post.like_users.add(user)
+        status = True
+    
+    context = {
+        'status': status,
+        'count': len(post.like_users.all()),
+    }
+
+    return JsonResponse(context)
