@@ -7,7 +7,7 @@
         {% endif %}
         <a href="{% url 'accounts:profile' username=post.user %}" class="text-reset text-decoration-none">{{post.user}}</a>
     </div>
-    <img src="{{ post.image.url }}" alt="">
+    <img src="{{ post.image.url }}" style="border-radius: 20%" alt="">
     <div class="card-body">
         
             {% if user in post.like_users.all %}
